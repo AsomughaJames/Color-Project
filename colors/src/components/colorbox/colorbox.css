@@ -1,0 +1,110 @@
+.color-box {
+  width: 20%;
+  height: 25%;
+  display: inline-block;
+  position: relative;
+  margin-bottom: -4px; }
+  .color-box-context span {
+    position: absolute;
+    bottom: 1px;
+    left: 2px;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-weight: 600; }
+
+.copy-button {
+  color: white;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5em;
+  height: 2.5em;
+  margin-left: -2.5em;
+  margin-top: -1.25em;
+  background-color: rgba(128, 128, 128, 0.25);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 5px;
+  text-transform: uppercase;
+  opacity: 0; }
+
+.color-box:hover .copy-button {
+  opacity: 1;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 10px 10px 20px -3px rgba(0, 0, 0, 0.3);
+          box-shadow: 10px 10px 20px -3px rgba(0, 0, 0, 0.3); }
+
+.see-more {
+  position: absolute;
+  color: aliceblue;
+  bottom: 1px;
+  right: 1px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 600;
+  padding: 1px 4px;
+  background-color: rgba(240, 248, 255, 0.2); }
+
+.overLay {
+  width: 40%;
+  height: 40%;
+  opacity: 0;
+  z-index: 0;
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out; }
+  .overLay.show {
+    position: absolute;
+    -webkit-transform: scale(19);
+            transform: scale(19);
+    opacity: 1;
+    z-index: 5; }
+
+.color-content {
+  max-width: 100vh;
+  max-width: 100%;
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  right: 40%;
+  bottom: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  z-index: 0;
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s; }
+  .color-content.show {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 1;
+    z-index: 6; }
+    .color-content.show h2, .color-content.show p {
+      width: 100%;
+      color: aliceblue;
+      margin: 0 auto;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 400; }
+    .color-content.show h2 {
+      background-color: rgba(240, 248, 255, 0.5); }
