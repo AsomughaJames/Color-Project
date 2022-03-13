@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "chroma-js": "^2.4.2"
+    "chroma-js": "^2.4.2",
+    "rc-slider": "^10.0.0-alpha.4"
   }
 }

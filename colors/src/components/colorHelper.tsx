@@ -1,6 +1,8 @@
 const chroma = require("chroma-js");
 const levels = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 
+
+
 type pp = {
     paletteName: string
     colors: any
@@ -8,7 +10,7 @@ type pp = {
     emoji: string
 }
 
-function generatePalette(starterPalette: any) {
+function GeneratePalette(starterPalette: any) {
     let newPalette: pp = {
         paletteName: starterPalette.paletteName,
         id: starterPalette.id,
@@ -20,7 +22,7 @@ function generatePalette(starterPalette: any) {
         newPalette.colors[level] = [];
     }
     for (let color of starterPalette.colors) {
-        let scale: [] = getScale(color.color, 10).reverse();
+        let scale: Array<any> = getScale(color.color, 10).reverse();
         for (let i in scale) {
             newPalette.colors[levels[i]].push({
                 name: `${color.name} ${levels[i]}`,
@@ -47,11 +49,11 @@ function getRange(hexColor: any) {
     ];
 }
 
-function getScale(hexColor: any, numberOfColors: any) {
+function getScale(hexColor: string, numberOfColors: number) {
     return chroma
         .scale(getRange(hexColor))
         .mode("lab")
         .colors(numberOfColors);
 }
 
-export { generatePalette };
+export { GeneratePalette };
