@@ -4,25 +4,26 @@ const CopyToClipboard = require("react-copy-to-clipboard")
 
 type colorbox = {
     background: any
+    colorT: string;
 }
 
-function Colorbox({ background }: colorbox) {
+function Colorbox({ background, colorT }: colorbox) {
 
     const [copi, setCopy] = useState(false)
-    const { hex, name } = background
+    const { name } = background
     const handleClick = () => {
         setCopy(el => el = true);
         setTimeout(() => { setCopy(copi => false) }, 1500)
     }
 
     return (
-        <CopyToClipboard text={hex} onCopy={handleClick}>
-            <div style={{ background: hex }} className="color-box">
+        <CopyToClipboard text={background[colorT]} onCopy={handleClick}>
+            <div style={{ background: background[colorT] }} className="color-box">
 
-                <div style={{ background: hex }} className={`overLay ${copi && "show"}`} />
+                <div style={{ background: background[colorT] }} className={`overLay ${copi && "show"}`} />
                 <div className={`color-content ${copi && "show"}`}>
                     <h2>{"copied!"}</h2>
-                    <p>{hex}</p>
+                    <p>{background[colorT]}</p>
                 </div>
                 <div className={`color-box-context`}>
                     <span>{name}</span>

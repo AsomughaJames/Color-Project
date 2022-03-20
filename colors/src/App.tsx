@@ -1,17 +1,34 @@
 import React from 'react';
+import { Routes, Route, useParams } from "react-router-dom"
 import './App.css';
-import Pallete from "./components/pallete/pallete"
-import seedColor from "./seedColors"
-import { GeneratePalette } from "./components/colorHelper"
+import PalleteList from './components/palleteList/PalleteList';
+import DisplayPalette from './components/palleteList/DisplayPalette';
+
 
 
 
 
 function App() {
+
+
+  const Bout = () => {
+    let { id } = useParams();
+    return id
+
+  }
+
+
+
+
+
   return (
     <div className="App">
 
-      <Pallete pallete={GeneratePalette(seedColor[3])} />
+      <Routes>
+        <Route path="/" element={<PalleteList />} />
+        <Route path={"/pallete/:id"} element={<DisplayPalette params={Bout} />} />
+
+      </Routes>
 
     </div>
   );
