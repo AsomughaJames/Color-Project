@@ -27,6 +27,8 @@ function App() {
       <Routes>
         <Route path="/" element={<PalleteList />} />
         <Route path={"/pallete/:id"} element={<DisplayPalette params={Bout} />} />
+        <Route path={"/pallete/:id"} element={<DisplayPalette params={Bout} />} />
+        <Route path={"*"} element={<div>Error! Page not found </div>} />
 
       </Routes>
 
